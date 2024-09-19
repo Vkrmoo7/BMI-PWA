@@ -1,0 +1,275 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+/* Fixed Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand h1 {
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links li {
+  margin-left: 20px;
+}
+
+.navbar-links a {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(216, 213, 213, 0.829);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s;
+}
+
+.navbar-links a:hover {
+  color: white;
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    z-index: 999;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links li {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Main Section */
+.main-section {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7rem;
+}
+
+
+.card {
+  height: auto;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 350px;
+  width: 100%;
+}
+
+.card img {
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.card h2 {
+  margin: 2rem 0;
+}
+
+.card button {
+  margin: 2rem 0;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.card button:hover {
+  background-color: #555;
+}
+
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #333, #222);
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: right;
+  text-align: center;
+}
+
+.footer-social-media, .footer-quick-links, .footer-author {
+  text-align: left;
+  padding: 1rem;
+}
+
+/* Social Media Icons */
+.footer-social-media a {
+  color: rgba(151, 148, 148, 0.89);
+  display: flex;
+  text-align: left;
+  text-decoration: none;
+  margin: 1rem 0;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer-social-media a:hover {
+  color: #f4f4f4;
+  transform: translateY(-5px); /* Subtle lift effect */
+}
+
+/* Quick Links */
+.footer-quick-links a {
+  display: flex;
+  text-align: left;
+  color: rgba(151, 148, 148, 0.89);
+  text-decoration: none;
+  padding: 0.3rem 0;
+  margin: 0.3rem;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.footer-quick-links a:hover {
+  color: #ffffff;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Author Section */
+.footer-author p {
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.footer-author span {
+  font-weight: bold;
+  color: #f4f4f4;
+}
+
+/* Divider */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #555;
+  margin: 1.5rem 0;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    text-align: left;
+  }
+
+  .footer-social-media, .footer-quick-links, .footer-author {
+    flex: 1;
+  }
+
+  .footer-quick-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* FontAwesome Integration for Icons */
+.footer-social-media a i {
+  font-size: 24px;
+  margin: 0 0.5rem;
+}
+html {
+  scroll-behavior: smooth;
+}
