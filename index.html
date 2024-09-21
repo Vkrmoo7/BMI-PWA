@@ -37,7 +37,7 @@
       </div>
 
       <!-- Card for Normal BMI Calculator -->
-      <div class="card">
+     <!-- <div class="card">
         <img src="./img/bmi2.jpeg" alt="Normal Calculator Image">
         <h2>Normal BMI Calculator</h2>
         <p>Use the normal BMI calculator for quick and easy results.</p>
@@ -45,7 +45,7 @@
         <div class="viewall">
         </div>
       </div>
-    </div>
+    </div>-->
   </section>
 
   <!-- Footer -->
@@ -86,6 +86,13 @@
     hamburger.addEventListener('click', () => {
       navbarLinks.classList.toggle('active');
     });
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js').then(() => {
+        console.log('Service Worker Registered');
+      });
+    }
   </script>
   <script>
     if ('serviceWorker' in navigator) {
