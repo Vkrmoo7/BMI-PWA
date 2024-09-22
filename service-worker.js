@@ -1,7 +1,5 @@
 const CACHE_NAME = 'bmi-cache-v1';
 const urlsToCache = [
-    '/index.html',
-    '/styles.css',
     '/pwa-bmi-calculator.html',
     '/style/pwa.css',
     '/js/pwa.js',
