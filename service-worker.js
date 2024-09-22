@@ -1,13 +1,14 @@
-const CACHE_NAME = 'bmi-cache-v1';
+const CACHE_NAME = 'vk-bmi';
 const urlsToCache = [
-    '/pwa-bmi-calculator.html',
-    '/style/pwa.css',
-    '/js/pwa.js',
-    '/manifest.json',
-    // Add more resources if needed, such as images, fonts, etc.
+    '/pwa-bmi-calculator.html',  // Main BMI calculator page
+    '/style/pwa.css',            // CSS for styling
+    '/js/pwa.js',                // Your JavaScript for functionality
+    '/manifest.json',            // PWA manifest
+    '/offline.html',             // Fallback page for offline usage
+    // Add more assets like fonts or images if necessary
 ];
 
-// Install event: Cache assets
+// Install event: Cache the essential assets
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME).then(cache => {
@@ -39,16 +40,19 @@ self.addEventListener('fetch', event => {
         caches.match(event.request).then(response => {
             // Return cache hit or fetch from network
             return response || fetch(event.request).then(networkResponse => {
-                // Optionally cache the new request if needed
+                // Cache the new response if needed
                 return caches.open(CACHE_NAME).then(cache => {
-                    cache.put(event.request, networkResponse.clone());
+                    // Cache only if it's a valid response
+                    if (event.request.method === 'GET' && networkResponse.status === 200) {
+                        cache.put(event.request, networkResponse.clone());
+                    }
                     return networkResponse;
                 });
             });
         }).catch(() => {
-            // Fallback in case of an error (e.g., user is offline)
+            // Fallback for when both cache and network fail (e.g., offline)
             if (event.request.mode === 'navigate') {
-                return caches.match('/offline.html');  // Make sure you cache an offline.html page if needed
+                return caches.match('/offline.html');  // Ensure offline.html is cached
             }
         })
     );
