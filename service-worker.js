@@ -4,7 +4,7 @@ const urlsToCache = [
     '/style/pwa.css',            // CSS for styling
     '/js/pwa.js',                // Your JavaScript for functionality
     '/manifest.json',            // PWA manifest
-    '/offline.html',             // Fallback page for offline usage
+    '/index.html',             // Fallback page for offline usage
     // Add more assets like fonts or images if necessary
 ];
 
@@ -52,7 +52,7 @@ self.addEventListener('fetch', event => {
         }).catch(() => {
             // Fallback for when both cache and network fail (e.g., offline)
             if (event.request.mode === 'navigate') {
-                return caches.match('/offline.html');  // Ensure offline.html is cached
+                return caches.match('/index.html');  // Ensure offline.html is cached
             }
         })
     );
