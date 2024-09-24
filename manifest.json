@@ -2,7 +2,7 @@
   "name": "BMI Calculator (vikram)",
   "short_name": "BMI Calc",
   "description": "A Progressive Web App for calculating BMI.",
-  "start_url": "pwa-bmi-calculator.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ff6f61",
