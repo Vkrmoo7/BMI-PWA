@@ -4,7 +4,8 @@ const urlsToCache = [
     '/style/pwa.css',            // CSS for styling
     '/js/pwa.js',                // Your JavaScript for functionality
     '/manifest.json',            // PWA manifest
-    '/index.html',             // Fallback page for offline usage
+    '/index.html',
+    '/styles.css',
     // Add more assets like fonts or images if necessary
 ];
 
